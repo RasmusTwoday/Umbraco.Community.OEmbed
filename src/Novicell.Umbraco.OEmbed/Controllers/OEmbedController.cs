@@ -1,17 +1,17 @@
 ﻿using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
+using IOEmbedService = Novicell.Umbraco.OEmbed.Services.IOEmbedService;
+using Novicell.Umbraco.OEmbed.PropertyEditors;
 using System;
+using System.Collections.Generic;
 using System.ComponentModel;
 using System.Threading;
-using Novicell.Umbraco.OEmbed.PropertyEditors;
-using Umbraco.Cms.Web.BackOffice.Controllers;
+using System.Threading.Tasks;
 using Umbraco.Cms.Web.Common.Attributes;
 using Umbraco.Cms.Web.Common.Authorization;
+using Umbraco.Cms.Web.Common.Controllers;
 using Umbraco.Cms.Core.Services;
 using Umbraco.Extensions;
-using System.Collections.Generic;
-using System.Threading.Tasks;
-using Novicell.Umbraco.OEmbed.Services;
 
 namespace Novicell.Umbraco.OEmbed.Controllers
 {
@@ -21,7 +21,7 @@ namespace Novicell.Umbraco.OEmbed.Controllers
     [EditorBrowsable(EditorBrowsableState.Never)]
     [PluginController(OEmbedPropertyEditor.PluginAreaName), IsBackOffice]
     [Authorize(Policy = AuthorizationPolicies.BackOfficeAccess)]
-    public class OEmbedController : UmbracoAuthorizedJsonController
+    public class OEmbedController : UmbracoAuthorizedController
     {
         private readonly ILocalizedTextService _localizedTextService;
         private readonly IOEmbedService _oembedService;
@@ -34,6 +34,7 @@ namespace Novicell.Umbraco.OEmbed.Controllers
             _oembedService = oembedService;
         }
 
+        [HttpGet]
         public async Task<IActionResult> Get(string url, int maxwidth = 0, int maxheight = 0, string type = null)
         {
             Uri _url = null;
