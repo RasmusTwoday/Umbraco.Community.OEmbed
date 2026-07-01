@@ -28,7 +28,6 @@
     <RazorCompileOnPublish>false</RazorCompileOnPublish>
   </PropertyGroup>
 
-  <Import Project="..\Novicell.Umbraco.OEmbed\build\Novicell.Umbraco.OEmbed.targets" />
   <ItemGroup>
     <ProjectReference Include="..\Novicell.Umbraco.OEmbed\Novicell.Umbraco.OEmbed.csproj" />
   </ItemGroup>
