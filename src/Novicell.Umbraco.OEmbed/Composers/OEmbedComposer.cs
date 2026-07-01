@@ -1,10 +1,9 @@
-﻿using System.Linq;
-using Novicell.Umbraco.OEmbed.Services;
+﻿using Novicell.Umbraco.OEmbed.Services;
 using Umbraco.Cms.Core.Composing;
 using Umbraco.Cms.Core.DependencyInjection;
 using Umbraco.Extensions;
 
-namespace Novicell.Umbraco.OEmbed.Composing
+namespace Novicell.Umbraco.OEmbed.Composers
 {
     public class OEmbedComposer : IComposer
     {

@@ -2,11 +2,7 @@
 using Microsoft.AspNetCore.Mvc;
 using IOEmbedService = Novicell.Umbraco.OEmbed.Services.IOEmbedService;
 using Novicell.Umbraco.OEmbed.PropertyEditors;
-using System;
-using System.Collections.Generic;
 using System.ComponentModel;
-using System.Threading;
-using System.Threading.Tasks;
 using Umbraco.Cms.Web.Common.Attributes;
 using Umbraco.Cms.Web.Common.Authorization;
 using Umbraco.Cms.Web.Common.Controllers;
